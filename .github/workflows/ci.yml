@@ -1,4 +1,13 @@
-- name: Run markdown lint
-  run: |
-    npm install remark-cli remark-preset-lint-consistent
-    npx remark . --use remark-preset-lint-consistent --frail
+name: CI
+on:
+  push:
+    branches:
+      - ci
+jobs:
+    job_1:
+        runs-on: ubuntu-latest
+        steps:
+         - name: Run markdown lint
+           run: |
+            npm install remark-cli remark-preset-lint-consistent
+            npx remark . --use remark-preset-lint-consistent --frail
